@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Belajar Javascript</title>
+    </head>
+    <body>
+        <script>
+    function f() {
+  try {
+    throw 'sanul';
+  } catch(e) {
+    console.log('caught inner "sanul"');
+    throw e; // this throw statement is suspended until 
+             // finally block has completed
+  } finally {
+    return false; // overwrites the previous "throw"
+  }
+  // "return false" is executed now
+}
+
+try {
+  console.log(f());
+} catch(e) {
+  // this is never reached because the throw inside
+  // the catch is overwritten
+  // by the return in finally
+  console.log('caught outer "sanul"');
+}
+
+function doSomethingErrorProne() {
+  if (ourCodeMakesAMistake()) {
+    throw (new Error('The message'));
+  } else {
+    doSomethingToGetAJavascriptError();
+  }
+}
+try {
+  doSomethingErrorProne();
+} catch (e) {
+  console.log(e.name); // logs 'Error'
+  console.log(e.message); // logs 'The message' or a JavaScript error message
+}
+
+        </script>
+    </body>
+    <script src="switchcase.js"></script>
+    <br>
+    <script src="function.js"></script>
+    <br>
+    <script src="trycatch.js"></script>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hari ke 3</title>
+</head>
+
+<body>
+    <form name="myForm" onsubmit="return validateForm()" method="post">
+        Name: <input type="text" name="fname">
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+// soal 1
+// const square = function(x) {
+// var x = prompt("Masukkan Nilai yang akan dikali ")
+//   return x * x;
+// };
+// document.write(square());
+    </script>
+    <script>
+// // soal 2
+// const power = function(base, exponent) {
+//   let result = 1;
+//   for (let count = 0; count < exponent; count++) {
+//     result *= base;
+//   }
+//   return result;
+// };
+
+// console.log(power(2, 3));
+    </script>
+    <script>
+// // soal 3
+// const halve = function(n) {
+//   return n / 2;
+// };
+
+// console.log(halve(5));
+    </script>
+
+    <script>
+        console.log("The future says:", future());
+
+        function future() {
+            return "You'll never have flying cars";
+        }
+    </script>
+
+    <script>
+        function greet(who) {
+            console.log("Hello " + who);
+        }
+        greet("Harry");
+        console.log("Bye");
+    </script>
+
+    <script>
+        function printFarmInventory(cows, chickens) {
+            let cowString = String(cows);
+            while (cowString.length < 3) {
+                cowString = "0" + cowString;
+            }
+            console.log(`${cowString} Cows`);
+            let chickenString = String(chickens);
+            while (chickenString.length < 3) {
+                chickenString = "0" + chickenString;
+            }
+            console.log(`${chickenString} Chickens`);
+        }
+        printFarmInventory(5, 10)
+    </script>
+
+    <script>
+        function zeroPad(number, width) {
+            let string = String(number);
+            while (string.length < width) {
+                string = "0" + string;
+            }
+            return string;
+        }
+
+        function printFarmInventory(cows, chickens, pigs) {
+            console.log(`${zeroPad(cows, 3)} Cows`);
+            console.log(`${zeroPad(chickens, 3)} Chickens`);
+            console.log(`${zeroPad(pigs, 3)} Pigs`);
+        }
+
+        printFarmInventory(7, 16, 3);
+    </script>
+
+    <script>
+        function myFunc(theObject) {
+            theObject.brand = "Toyota";
+        }
+
+        var mycar = {
+            brand: "Honda",
+            model: "Accord",
+            year: 1998
+        };
+        console.log(mycar.brand);
+        myFunc(mycar);
+        console.log(mycar.brand);
+        console.log(mycar.year);
+    </script>
+
+<script>
+const f = function(a) {
+  console.log(a + 2);
+};
+
+function g(a, b) {
+  return a * b * 3.5;
+}
+let h = a => a % 3;
+</script>
+
+</body>
+
+</html>

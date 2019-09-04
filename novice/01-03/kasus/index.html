@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kasus hari ke 3</title>
+</head>
+
+<body>
+    <h2>Meramal</h2>
+    <script>
+        function meramal(jabatan, alamat, pasangan, anak) {
+            var future = 'Kamu akan menjadi ' + jabatan + ' di ' + alamat + ' dan menikah dengan ' +
+                pasangan + ' ' + ' dengan mempunyai ' + anak + ' anak.';
+            document.write(future);
+            document.write("<br>");
+        }
+        meramal('Programer', 'Pertamina', 'Rani', 5);
+        meramal('Stack Developer', 'Praxis-Academy', 'Juleha', 3);
+        meramal('Pemain sepakbola', 'PSS Sleman', 'Aninda', 1);
+    </script>
+
+    <h2>Menghitung Tahun Anjing</h2>
+    <script>
+        function MenghitungTahunAnjing(age) {
+            var dogYears = 7 * age;
+            console.log("Anjing kamu berusia " + dogYears + " tahun ditahun anjing");
+            document.write("Anjing kamu berusia " + dogYears + " tahun ditahun anjing");
+            document.write("<br>");
+
+            var manYears = age * 1 / 7;
+            console.log("Anjing kamu berusia " + manYears + " tahun ditahun manusia");
+            document.write("Anjing kamu berusia " + manYears + " tahun ditahun manusia");
+            document.write("<br>");
+        }
+
+        MenghitungTahunAnjing(7);
+        MenghitungTahunAnjing(14);
+        MenghitungTahunAnjing(21);
+    </script>
+
+    <h2>Menghitung kebutuhan</h2>
+    <script>
+        function calculateSupply(age, numPerDay) {
+            var maxAge = 60;
+            var totalNeeded = (numPerDay * 365) * (maxAge - age);
+            var totalDay = (numPerDay * 1) * (maxAge - age);
+            var message = 'Kamu membutuhkan ' + totalNeeded + ' gelas teh untuk mencapai usia ' + maxAge;
+            var pesan = 'Kamu membutuhkan ' + totalDay + ' gelas teh per hari untuk mencapai usia ' + maxAge;
+
+            console.log(pesan);
+            document.write(pesan);
+            document.write("<br>");
+        }
+
+        calculateSupply(18, 10);
+        calculateSupply(22, 8);
+        calculateSupply(23, 5);
+    </script>
+    
+    <h2>Menghitung Celcius Ke Farenhet</h2>
+    <script>
+        function celsiusToFahrenheit(celsius) {
+            celsius = prompt("Input derajat celcius");
+            var celsiusInF = (celsius * 9) / 5 + 32;
+            console.log(celsius + '°C is ' + celsiusInF + '°F');
+            document.write(celsius + '°C is ' + celsiusInF + '°F');
+        }
+
+        celsiusToFahrenheit();
+    </script>
+
+    <h2>Menghitung Farenhet ke Celcius</h2>
+    <script>
+        function fahrenheitToCelsius(fahrenheit) {
+            fahrenheit = prompt("Masukkan derajat Farenhet ")
+            var fahrenheitInC = ((fahrenheit - 32) * 5) / 9;
+            console.log(fahrenheit + '°F is ' + fahrenheitInC + '°C');
+            document.write(fahrenheit + '°F is ' + fahrenheitInC + '°C');
+        }
+
+        fahrenheitToCelsius();
+    </script>
+
+    <h2>Menghitung Keliling Lingkaran</h2>
+    <script>
+        function calcCircumfrence(radius) {
+            radius = prompt("Masukkan Jari jari yang akan Anda hitung :")
+            var circumference = Math.PI * 2 * radius;
+            console.log("Keliling lingkaran adalah " + circumference);
+            document.write("Keliling lingkaran adalah " + circumference);
+        }
+        calcCircumfrence();
+    </script>
+
+    <h2>Menghitung Luas Lingkaran</h2>
+    <script>
+        function calcArea(radius) {
+            radius = prompt("Masukkan jari jari lingkaran :")
+            var area = Math.PI * radius * radius;
+            console.log("Luas Lingkarang adalah " + area);
+            document.write("Luas Lingkarang adalah " + area);
+        }
+        calcArea();
+    </script>
+</body>
+
+</html>

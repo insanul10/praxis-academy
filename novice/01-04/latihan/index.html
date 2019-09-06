@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<!-- <script>
+const foo = new String('foo'); // Creates a String object
+console.log(foo); // Displays: [String: 'foo']
+typeof foo; // Returns 'object'
+</script> -->
+
+<script>
+    //menampilkan text hello world
+    const hello = 'Hello, World!';
+    const helloLength = hello.length;
+    console.log(hello); // This has no effect, because strings are immutable
+    console.log(helloLength); // This returns "H"
+</script>
+
+<script>
+    //untuk ganti baris tanpa tanda petik
+    console.log(`string text line 1 
+string text line 2`);
+</script>
+
+<script>
+    //penjumlahan menggunakan const(normal string)
+    const five = 5;
+    const ten = 10;
+    console.log('Fifteen is ' + (five + ten) + ' and not ' + (2 * five + ten) + '.');
+</script>
+
+<script>
+    //penjumlahan menggunakan literals
+    const x = 5;
+    const y = 10;
+    console.log(`5 + 10 adalah ${x + y} bukan ${2 * x + y}.`);
+</script>
+
+<script>
+    const msPerDay = 24 * 60 * 60 * 1000;
+
+    const sept052019 = new Date(msPerDay * (44 * 365 + 11 + 197));
+
+    const options = {
+        year: '2-digit', month: '2-digit', day: '2-digit',
+        hour: '2-digit', minute: '2-digit', timeZoneName: 'short'
+    };
+    const indonesianDateTime = new Intl.DateTimeFormat('id-ID', options).format;
+
+    console.log(indonesianDateTime(sept052019)); //
+</script>
+
+<!-- <script>
+    const names = ['Hochberg', 'Hönigswald', 'Holzman'];
+
+    const germanDictionary = new Intl.Collator('de-DE-u-co-dict');
+
+    console.log(names.sort(germanDictionary.compare).join(', '));
+</script> -->
+
+
+<script>
+    var names = 'Orange Carrot ;Fred Barney; Helen Rigby ; Bill Abel ; Chris Hand ';
+
+    var output = ['---------- Original String\n', names + '\n'];
+    var pattern = /\s*;\s*/;
+    var nameList = names.split(pattern);
+    pattern = /(\w+)\s+(\w+)/;
+
+    var bySurnameList = [];
+    output.push('---------- After Split by Regular Expression');
+
+    var i, len;
+    for (i = 0, len = nameList.length; i < len; i++) {
+        output.push(nameList[i]);
+        bySurnameList[i] = nameList[i].replace(pattern, '$2, $1');
+    }
+
+    output.push('---------- Names Reversed');
+    for (i = 0, len = bySurnameList.length; i < len; i++) {
+        output.push(bySurnameList[i]);
+    }
+
+    bySurnameList.sort();
+    output.push('---------- Sorted');
+    for (i = 0, len = bySurnameList.length; i < len; i++) {
+        output.push(bySurnameList[i]);
+    }
+
+    output.push('---------- End');
+
+    console.log(output.join('\n'));
+
+</script>
+
+<script>
+    function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); // $& means the whole matched string
+        console.log(string);
+    }
+</script>
+
+<script>
+    var myRe = /d(b+)d/g;
+    var myArray = myRe.exec("cdbbdbsbz");
+    console.log("The value of lastIndex is " + myRe.lastIndex);
+
+    var myArray = /d(b+)d/g.exec("cdbbdbsbz");
+    console.log("The value of lastIndex is " + /d(b+)d/g.lastIndex);
+</script>
+
+<script>
+    //menggunakan replace untuk mengganti kata kata dalam string
+    var re = /(\w+)\s(\w+)/;
+    var str = "John Smith";
+    var newstr = str.replace(re, "$2, $1");
+    console.log(newstr);
+</script>
+
+<script>
+    var re = /\w+\s/g;
+    var str = "fee fi fo fum";
+    var myArray = str.match(re);
+    console.log(myArray);
+</script>
+
+<script>
+
+</script>
+
+</html>

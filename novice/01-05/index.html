@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h3>Latihan Objek Array II</H3>
+    Pemanggilan data Array dengan Perintah Perulangan For<BR>
+    <script>
+        var nilai = new Array(3);
+        nilai[0] = "A";
+        nilai[1] = "B";
+        nilai[2] = "C";
+        for (a = 0; a < 3; ++a) {
+            document.write("Nilai ke " + [a + 1] + " : " + nilai[a] + "<BR>");
+        }
+    </script>
+    <!-- 
+    <script>
+        let user = {
+            name: "John",
+            age: 30
+        };
+
+        // loop over values
+        for (let value of Object.values(user)) {
+            alert(value);
+        }
+    </script> -->
+    <!-- 
+    <script>
+        let prices = {
+            banana: 1,
+            orange: 2,
+            meat: 4,
+        };
+
+        let doublePrices = Object.fromEntries(
+            
+            Object.entries(prices).map(([key, value]) => [key, value * 2])
+        );
+
+        alert(doublePrices.meat);
+    </script> -->
+
+
+    <script>
+        let arr = [3, 5, 7];
+        arr.foo = 'hello';
+
+        for (let i in arr) {
+            console.log(i); // logs "0", "1", "2", "foo"
+        }
+
+        for (let i of arr) {
+            console.log(i); // logs 3, 5, 7
+        }
+    </script>
+
+    <script>
+        let map = new Map();
+
+        map.set('1', 'str1');   // a string key
+        map.set(1, 'num1');     // a numeric key
+        map.set(true, 'bool1'); // a boolean key
+
+        console.log(map.get(1)); // 'num1'
+        console.log(map.get('1')); // 'str1'
+
+        console.log(map.size); // 3
+    </script>
+
+    <script>
+        let messages = [
+            { text: "Hello", from: "John" },
+            { text: "How goes?", from: "John" },
+            { text: "See you soon", from: "Alice" }
+        ];
+
+        let readMap = new WeakMap();
+
+        readMap.set(messages[0], new Date(2017, 1, 1));
+    </script>
+
+    <script>
+        const days = ["senin", "selasa", "rabu"];
+
+        for (let i = 0; i < days.length; i++) {
+            printDay(days[i]); // senin selasa rabu
+        }
+
+        function printDay(day) {
+            console.log(day);
+        }
+    </script>
+
+    <script>
+        function formatDate(date) {
+            let diff = new Date() - date; // the difference in milliseconds
+
+            if (diff < 1000) { // less than 1 second
+                return 'Sekarang Jam';
+            }
+
+            let sec = Math.floor(diff / 1000); // convert diff to seconds
+
+            if (sec < 60) {
+                return sec + ' detik yang lalu';
+            }
+
+            let min = Math.floor(diff / 60000); // convert diff to minutes
+            if (min < 60) {
+                return min + ' menit yang lalu';
+            }
+
+            let d = date;
+            d = [
+                '0' + d.getDate(),
+                '0' + (d.getMonth() + 1),
+                '' + d.getFullYear(),
+                '0' + d.getHours(),
+                '0' + d.getMinutes()
+            ].map(component => component.slice(-2)); // take last 2 digits of every component
+
+            // join the components into date
+            return d.slice(0, 3).join('.') + ' ' + d.slice(3).join(':');
+        }
+
+        console.log(formatDate(new Date(new Date - 1)));
+        console.log(formatDate(new Date(new Date - 30 * 1000)));
+        console.log(formatDate(new Date(new Date - 5 * 60 * 1000)));
+        console.log(formatDate(new Date(new Date - 86400 * 1000)));
+    </script>
+
+    <script>
+    
+    </script>
+
+</body>
+
+</html>

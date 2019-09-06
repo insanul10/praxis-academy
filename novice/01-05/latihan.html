@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        //Task Map and Set
+        //1
+        function unique(arr) {
+            return Array.from(new Set(arr));
+        }
+
+        let values = ["Hare", "Krishna", "Hare", "Krishna",
+            "Krishna", "Krishna", "Hare", "Hare", ":-O"
+        ];
+
+        console.log(unique(values));
+
+    </script>
+
+
+    <script>
+        //2
+        function aclean(arr) {
+            let obj = {};
+
+            for (let i = 0; i < arr.length; i++) {
+                let sorted = arr[i].toLowerCase().split("").sort().join("");
+                obj[sorted] = arr[i];
+            }
+
+            return Object.values(obj);
+        }
+
+        let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+        console.log(aclean(arr));
+    </script>
+
+    <script>
+        //3 arary push
+        let map = new Map();
+
+        map.set("name", "John");
+
+        let keys = Array.from(map.keys());
+
+        keys.push("more");
+
+        console.log(keys)
+
+    </script>
+
+    <script>
+        //Task WeakMap dan Weakset
+        //1
+        let messages = [
+            { text: "Hello", from: "John" },
+            { text: "How goes?", from: "John" },
+            { text: "See you soon", from: "Alice" }
+        ];
+
+        let readMessages = new WeakSet();
+
+        // two messages have been read
+        readMessages.add(messages[0]);
+        readMessages.add(messages[1]);
+        // readMessages has 2 elements
+
+        // ...let's read the first message again!
+        readMessages.add(messages[0]);
+        // readMessages still has 2 unique elements
+
+        // answer: was the message[0] read?
+        alert("Read message 0: " + readMessages.has(messages[0])); // true
+
+        messages.shift();
+    </script>
+
+    <script>
+        let messages = {
+            ( text: "Hello", from: "John" ),
+            ( text: "How goes?", from: "John" ),
+            ( text: "See you soon", from: "Alice" )
+        };
+
+        let readMap = new WeakMap();
+
+        readMap.set(messages[0], new Date(2017, 1, 1));
+    </script>
+    <script>
+        function formatDate(date) {
+            let diff = new Date() - date; // the difference in milliseconds
+
+            if (diff < 1000) { // less than 1 second
+                return 'Sekarang Jam dan Tanggal';
+            }
+
+            let sec = Math.floor(diff / 1000); // convert diff to seconds
+
+            if (sec < 60) {
+                return sec + ' detik yang lalu';
+            }
+
+            let min = Math.floor(diff / 60000); // convert diff to minutes
+            if (min < 60) {
+                return min + ' menit yang lalu';
+            }
+
+            let d = date;
+            d = [
+                '0' + d.getDate(),
+                '0' + (d.getMonth() + 1),
+                '' + d.getFullYear(),
+                '0' + d.getHours(),
+                '0' + d.getMinutes()
+            ].map(component => component.slice(-2)); // take last 2 digits of every component
+
+            // join the components into date
+            return d.slice(0, 3).join('.') + ' ' + d.slice(3).join(':');
+        }
+
+        console.log(formatDate(new Date(new Date - 1)));
+        console.log(formatDate(new Date(new Date - 30 * 1000)));
+        console.log(formatDate(new Date(new Date - 5 * 60 * 1000)));
+        console.log(formatDate(new Date(new Date - 86400 * 1000)));
+    </script>
+
+    <script>
+
+    </script>
+</body>
+
+</html>

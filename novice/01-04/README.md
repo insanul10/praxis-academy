@@ -1,8 +1,7 @@
 Hari ini saya belajar tentang Function yang meliputi :
-1. Functions di Eloquent JavaScript 
-2. Function di MDN
-3. Variable hoisitng serta function hoisting.
-4. Self executing function.
-5. Pemahaman arrow function
-6. function hoisting.
-7. Mengerjakan kasus function
+1. Obyek String di JavaScript
+2. Gambaran umum RegExp
+3. Pola dan RegExp
+4. Karakter-karakter RegExp dan penggunaannya
+5. Membuat program platnomer indonesia
+6. Mengerjakan kasus input username dan domain

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        var Shape = function () { };
+        Shape.prototype.nama = function () {
+            console.log("memiliki bentuk");
+        };
+        var t = function () { };
+        t.prototype = new Shape(1, 2, 3);      //t inherits from Animals
+        t.prototype.segitiga = function () {
+            console.log("Bentuk Segitiga.");
+        };
+        var segi3 = new t(); //Creating instance of type Mammal
+        segi3.nama();              //elephant can use the inherited method from Animal.
+        segi3.segitiga();
+        console.log(segi3 instanceof t);
+        console.log(segi3 instanceof Shape);
+    </script>
+</body>
+
+</html>

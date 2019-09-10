@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Latihan</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var current = Object.prototype.valueOf;
+        Object.prototype.valueOf = function () {
+            if (this.hasOwnProperty('-prop-value')) {
+                return this['-prop-value'];
+            } else {
+                return current.apply(this, arguments);
+            }
+        }
+    </script>
+
+    <script type="text/javascript">
+        var Person = function (name) {
+            this.name = name;
+            this.canTalk = true;
+        };
+        Person.prototype.greet = function () {
+            if (this.canTalk) {
+                console.log('Hi, I am ' + this.name);
+            }
+        };
+        var Employee = function (name, title) {
+            Person.call(this, name);
+            this.title = title;
+        };
+        Employee.prototype = Object.create(Person.prototype);
+        Employee.prototype.constructor = Employee;
+
+        Employee.prototype.greet = function () {
+            if (this.canTalk) {
+                console.log('Hi, I am ' + this.name + ', the ' + this.title);
+                document.write('Hi, I am ' + this.name + ', the ' + this.title);
+            }
+        };
+        var Customer = function (name) {
+            Person.call(this, name);
+        };
+        Customer.prototype = Object.create(Person.prototype);
+        Customer.prototype.constructor = Customer;
+        var Mime = function (name) {
+            Person.call(this, name);
+            this.canTalk = false;
+        };
+        Mime.prototype = Object.create(Person.prototype);
+        Mime.prototype.constructor = Mime;
+        var bob = new Employee('Bob', 'Builder');
+        var joe = new Customer('Joe');
+        var rg = new Employee('Red Green', 'Handyman');
+        var mike = new Customer('Mike');
+        var mime = new Mime('Mime');
+        bob.greet();
+        document.write(bob.greet());
+        // Hi, I am Bob, the Builder
+        joe.greet();
+        // Hi, I am Joe
+        rg.greet();
+        // Hi, I am Red Green, the Handyman
+        mike.greet();
+        // Hi, I am Mike
+        mime.greet();
+    </script>
+</body>
+
+</html>

@@ -1,7 +1,14 @@
-Hari ini saya belajar tentang Function yang meliputi :
-1. Obyek String di JavaScript
-2. Gambaran umum RegExp
-3. Pola dan RegExp
-4. Karakter-karakter RegExp dan penggunaannya
-5. Membuat program platnomer indonesia
-6. Mengerjakan kasus input username dan domain
+Hari ini saya belajar tentang :
+1. Memahami Konsep OOP pada JavaScript
+
+2. Prototype pada Javascript
+
+3. Implementasi OOP berbasis Prototype
+
+4. OOP Prototype Inheritance/Turunan
+
+5. Kesulitan Saat run code di node js
+
+6. Latihan Soal Tentang OOP
+
+7. Mengerjakan Kasus Inheritance Prototype

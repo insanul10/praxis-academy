@@ -1,7 +1,8 @@
-Hari ini saya belajar tentang Function yang meliputi :
-1. Obyek String di JavaScript
-2. Gambaran umum RegExp
-3. Pola dan RegExp
-4. Karakter-karakter RegExp dan penggunaannya
-5. Membuat program platnomer indonesia
-6. Mengerjakan kasus input username dan domain
+Hari ini saya belajar tentang :
+1. Mempelajari objek dan array pada javascript
+2. Penggunaan Iterable
+3. Map dan Set
+4. WeakMap dan Weak Set
+5. Date Time pada javascript
+6. Latihan Soal
+7. Mengerjakan Kasus Yang diberikan

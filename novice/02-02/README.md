@@ -1,8 +1,7 @@
 Hari ini saya belajar tentang :
-1. Memahami Konsep OOP pada JavaScript
-2. Prototype pada Javascript
-3. Implementasi OOP berbasis Prototype
-4. OOP Prototype Inheritance/Turunan
-5. Kesulitan Saat run code di node js
-6. Latihan Soal Tentang OOP
-7. Mengerjakan Kasus Inheritance Prototype
+1.JavaScript Classes - Under the Hood.
+2. Materi class di javascript.info.
+3. Prototyping.
+4. Classes in JavaScript.
+5. Mengerjakan  contoh latihan
+6. Mengerjakan kasus OPP

@@ -1,5 +1,5 @@
 Hari ini saya belajar tentang :
-1.JavaScript Classes - Under the Hood.
+1. JavaScript Classes - Under the Hood.<br>
 2. Materi class di javascript.info.
 3. Prototyping.
 4. Classes in JavaScript.

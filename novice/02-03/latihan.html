@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Latihan minggu ke 2 hari ke 3</title>
+</head>
+
+<body>
+    <script>
+        //curying
+        const myWordsOperation = (firstWord) => (secondWord) => (thirdWord) => {
+            return firstWord + ' ' + secondWord + ' ' + thirdWord;
+        };
+
+        console.log(myWordsOperation("John")("Mick")("Johannson"))
+    </script>
+
+    <script>
+        //FP
+        var books = [
+            { name: 'JavaScript', pages: 450 },
+            { name: 'Angular', pages: 902 },
+            { name: 'Node', pages: 732 }
+        ];
+        /* Imperative Pattern */
+        for (var i = 0; i < books.length; i++) {
+            books[i].lastRead = new Date();
+        }
+        /* Declarative Pattern */
+        books.map((book) => {
+            book.lastReadBy = 'me';
+            return book;
+        });
+        console.log(books);
+    </script>
+
+    <script>
+        //HOF
+        // Example 1: Array.prototype.filter
+        const isEven = (num) => {
+            return num % 2 === 0
+        }
+
+        const nums = [1, 2, 3, 4, 5, 6];
+
+        const evenNums = nums.filter(isEven);
+        console.log(evenNums); // [2,4,6]
+
+        // Example 2: Array.prototype.map
+        const capitalizeWord = (word) => {
+            return word[0].toUpperCase() + word.slice(1, word.length);
+        }
+
+        const sentence = "you there. i'm batman!";
+
+        const uppercasedSentence = sentence.split(' ').map(capitalizeWord);
+
+        console.log(uppercasedSentence); // "You There. I'm Batman!"
+    </script>
+
+    <script>
+        // mutable variable
+        var mutableNumber = 5;
+        mutableNumber = 7;
+
+        // immutable variable
+        const immutableNumber = 3;
+        // immutableNumber = 1; // this operation will fetch an error -> TypeError: Assignment to constant variable.
+
+        // mutable array
+        var mutableHobbies = ["Reading"];
+        mutableHobbies.push("Gaming");
+
+        console.log(mutableHobbies); // ["Reading", "Gaming"];
+
+        // immutable array (ES5 using concat)
+        var immutableHobbies = ["Reading"];
+        var newUpdatedImmutableHobbiesES5 = immutableHobbies.concat("Gaming");
+
+        console.log(immutableHobbies); // ["Reading"]
+        console.log(newUpdatedImmutableHobbiesES5); // ["Reading", "Gaming"];
+
+        // immutable array (ES6 using spread operator)
+        var newUpdatedImmutableHobbiesES6 = [...immutableHobbies, "Gaming"];
+
+        console.log(newUpdatedImmutableHobbiesES6); // ["Reading", "Gaming"];
+
+        // mutable Object
+        var myMutableObj = { name: "John Doe", age: 20 };
+        myMutableObj.age = 21;
+
+        console.log(myMutableObj); // { name: "John Doe", age: 21 };
+
+        // immutable Object (ES5 using Object.assign)
+        var myImmutableObj = { name: "John Doe", age: 20 };
+        const newUpdatedObjES5 = Object.assign({}, myImmutableObj, { age: 21 });
+
+        console.log(myImmutableObj); // { name: "John Doe", age: 20 };
+        console.log(newUpdatedObjES5); // { name: "John Doe", age: 21 };
+
+        // immutable Object (ES6 using spread operator)
+        const newUpdatedObjES6 = { ...myImmutableObj, age: 21 };
+
+        console.log(myImmutableObj); // { name: "John Doe", age: 20 };
+        console.log(newUpdatedObjES6); // { name: "John Doe", age: 21 };
+    </script>
+    
+    <script>
+        //LODASH
+        var users = [
+            { user: "barney", age: 36 },
+            { user: "fred", age: 40 },
+            { user: "pebbles", age: 1 }
+        ];
+        var youngest = _.chain(users)
+            .sortBy("age")
+            .map(function (o) {
+                return o.user + " is " + o.age;
+            })
+            .head()
+            .value();
+    </script>
+
+    <script>
+        //RAMDA
+        const sortByAge = R.sortBy(R.prop("age"));
+        const youngeste = R.pipe(
+            sortByAge,
+            R.map(({ user, age }) => `${user} is ${age}`),
+            R.head
+        )(users);
+    </script>
+
+    <script>
+        //RECURSION
+        let list = [1, 2, 3, 4, 5];
+        let accumulator = 0;
+
+        function sum(list, accumulator) {
+            if (list.length == 0) {
+                return accumulator;
+            }
+
+            return sum(list.slice(1), accumulator + list[0]);
+        }
+
+        sum(list, accumulator); // 15
+        list; // [1, 2, 3, 4, 5]
+        accumulator; // 0
+    </script>
+
+    <script>
+        //SIDEEFFECT
+        let meetup = { name: 'JS', isActive: true, members: 49 };
+        const scheduleMeetup = (date, place) => {
+            meetup.date = date;
+            meetup.place = place;
+            if (meetup.members < 50)
+                meetup.isActive = false;
+        }
+        const publishMeetup = () => {
+            if (meetup.isActive) {
+                meetup.publish = true;
+            }
+        }
+        scheduleMeetup('today', 'Bnagalore');
+        publishMeetup();
+        console.log(meetup);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Latihan</title>
+</head>
+
+<body>
+    <script>
+        //PROMISE
+        var promise1 = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                resolve('foo');
+            }, 300);
+        });
+
+        promise1.then(function (value) {
+            console.log(value);
+            // expected output: "foo"
+        });
+
+        console.log(promise1);
+        // expected output: [object Promise]
+    </script>
+
+    <script>
+        //CALLBACK
+        function main(param1, param2, callBack) {
+            console.log(param1, param2)
+            callBack()
+        }
+
+        function myCallback() {
+            console.log('hello callback')
+        }
+
+        main(3, 6, myCallback)
+    </script>
+
+</body>
+<script src="blockingcall.js"></script>
+
+</html>

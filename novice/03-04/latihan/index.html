@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Simple DOM example</title>
+    <style>
+        .highlight {
+            color: white;
+            background-color: black;
+            padding: 10px;
+            width: 250px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <img src="dinosaur.png" alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth.">
+        <p>Here we will add a link to the <a href="https://www.mozilla.org/">Mozilla homepage</a></p>
+    </section>
+
+    <div id="getComputedStyle"></div>
+
+    <div id="setAttrib">setAttribute</div>
+
+    <div id="getAttrib" contenteditable=true>getAttribute</div>
+
+    <table></table>
+
+    <div id="insertbefore">
+        <strong>hello</strong>
+    </div>
+
+    <script>
+        var link = document.querySelector('a');
+        link.textContent = 'Mozilla Developer Network';
+        link.href = 'https://developer.mozilla.org';
+        var sect = document.querySelector('section');
+        var para = document.createElement('p');
+        para.textContent = 'We hope you enjoyed the ride.';
+        sect.appendChild(para);
+        var text = document.createTextNode(' — the premier source for web development knowledge.');
+        var linkPara = document.querySelector('p');
+        linkPara.appendChild(text);
+        sect.appendChild(linkPara);
+        linkPara.parentNode.removeChild(linkPara);
+        para.setAttribute('class', 'highlight');
+        var style = getComputedStyle(document.getElementById('getComputedStyle'));
+        alert(style.width);
+        var div = document.getElementById('setAttrib');
+        div.setAttribute('contenteditable', '');
+        var div = document.getElementById('getAttrib');
+        alert(div.getAttribute('contenteditable'));
+        var table = document.querySelector("table");
+        var df = document.createDocumentFragment();
+        for (var i = 0; i < 5; i++) {
+            var td = document.createElement("td");
+            var tr = document.createElement("tr");
+            td.textContent = i;
+            tr.appendChild(td)
+            df.appendChild(tr);
+        }
+        table.appendChild(df);
+        var em = document.createElement('em');
+        var strong = document.querySelector('strong');
+        var div = document.getElementById('insertbefore');
+        em.textContent = 'hi';
+        div.insertBefore(em, strong);
+    </script>
+</body>
+
+</html>
